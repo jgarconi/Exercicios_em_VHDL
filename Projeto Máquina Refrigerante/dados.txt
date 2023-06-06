@@ -1,0 +1,63 @@
+-- Projeto Máquina de estados finitas de Moore
+--! @file      dados.txt
+--! @brief     Dados para configuração da placa no simulador.
+--! @author    Juliana Garçoni dos Santos
+--! @date      2019-07-01 (last update)
+-------------------------------------------------------------------------------
+
+-- XDC -----------------------------------------------------------------------------------------------
+set_property PACKAGE_PIN W7 [get_ports {output_7seg[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_7seg[6]}]
+set_property PACKAGE_PIN W6 [get_ports {output_7seg[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_7seg[5]}]
+set_property PACKAGE_PIN U8 [get_ports {output_7seg[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_7seg[4]}]
+set_property PACKAGE_PIN V8 [get_ports {output_7seg[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_7seg[3]}]
+set_property PACKAGE_PIN U5 [get_ports {output_7seg[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_7seg[2]}]
+set_property PACKAGE_PIN V5 [get_ports {output_7seg[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_7seg[1]}]
+set_property PACKAGE_PIN U7 [get_ports {output_7seg[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_7seg[0]}]
+set_property PACKAGE_PIN U2 [get_ports {output_an[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_an[0]}]
+set_property PACKAGE_PIN U4 [get_ports {output_an[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_an[1]}]
+set_property PACKAGE_PIN V4 [get_ports {output_an[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_an[2]}]
+set_property PACKAGE_PIN W4 [get_ports {output_an[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {output_an[3]}]
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports clk]
+set_property PACKAGE_PIN T17 [get_ports clr]
+set_property IOSTANDARD LVCMOS33 [get_ports clr]
+set_property PACKAGE_PIN U18 [get_ports moeda_ack]
+set_property IOSTANDARD LVCMOS33 [get_ports moeda_ack]
+set_property PACKAGE_PIN T18 [get_ports moeda_retirada]
+set_property IOSTANDARD LVCMOS33 [get_ports moeda_retirada]
+set_property PACKAGE_PIN W19 [get_ports refri_retirado]
+set_property IOSTANDARD LVCMOS33 [get_ports refri_retirado]
+set_property PACKAGE_PIN U16 [get_ports {drop_pop}]
+set_property IOSTANDARD LVCMOS33 [get_ports {drop_pop}]
+set_property PACKAGE_PIN E19 [get_ports {return_nickel}]
+set_property IOSTANDARD LVCMOS33 [get_ports {return_nickel}]
+set_property PACKAGE_PIN V17 [get_ports {coin[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {coin[0]}]
+set_property PACKAGE_PIN V16 [get_ports {coin[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {coin[1]}]
+
+--UCF ---------------------------------------------------------------------------------------------
+
+NET "clr" LOC = "A7";
+NET "REFRI_RETIRADO" LOC = "M4";
+NET "MOEDA_RETIRADA" LOC = "C11";
+NET "MOEDA_ACK" LOC = "G12";
+
+NET "coin(1)" LOC = "L3";
+NET "coin(0)" LOC = "P11";
+
+NET "return_nickel" LOC = "M11";
+NET "drop_pop " LOC = "M5";
+
